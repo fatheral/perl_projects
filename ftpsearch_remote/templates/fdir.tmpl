@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Search.bks-tv.ru &raquo; FTP Browser</title>
+<link href="/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="tl2">&nbsp;</td>
+    <td class="t2">&nbsp;</td>
+    <td class="tr2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="l2">&nbsp;</td>
+    <td><DIV align=center class="title">
+БРАУЗЕР FTP-СЕРВЕРОВ ЛОКАЛЬНОЙ СЕТИ БКС
+    </DIV>
+    <hr>
+<div align="center">
+Содержимое <a href="<TMPL_VAR NAME="top_href">"><b><TMPL_VAR NAME="top_name"></b></a> :<br>
+</div>
+<div align="center">Всего в директории: <b><TMPL_VAR NAME="num"></b> файлов
+<br>
+
+<TMPL_IF NAME="parent_dir">
+На уровень выше<a href="?dir=<TMPL_VAR NAME="parent_dir">&amp;serv=<TMPL_VAR NAME="parent_serv">"><img border="0" src="/design/arrow.jpg"></a>
+<TMPL_ELSE>
+<a href="?dir="><b>К списку FTP-серверов</b></a>
+</TMPL_IF>
+
+<br><br>
+<table class="tbl">
+<tr><th>id</th><th>Тип</th><th>Имя файла</th><th>Размер</th><th>Ед</th><th>Дата скана</th></tr>
+
+<TMPL_LOOP NAME="ftable">
+<tr onMouseOver="this.style.backgroundColor='#cccccc'" onMouseOut="this.style.backgroundColor='#ffffff'">
+<td><TMPL_VAR NAME="ind">.</td>
+<td <TMPL_VAR NAME="fd">>&nbsp;</td>
+<td align="left"><a href="<TMPL_VAR NAME="href">"><TMPL_VAR NAME="name"></a></td>
+<td align="right"><TMPL_VAR NAME="size"></td>
+<td align="right"><TMPL_VAR NAME="size_ed"></td>
+<td align="center"><TMPL_VAR NAME="time"></td>
+</tr>
+</TMPL_LOOP>
+
+</table>
+
+<TMPL_IF NAME="pages">
+<table>
+<tr>
+        <th>Страницa <b><TMPL_VAR NAME="page"></b> из <b><TMPL_VAR NAME="strnum"></b>:</th>
+        <TMPL_LOOP NAME="pages">
+        <td><TMPL_IF NAME="serv"><a href="?dir=<TMPL_VAR NAME="dir">&amp;serv=<TMPL_VAR NAME="serv">&amp;page=<TMPL_VAR NAME="page">"></TMPL_IF><b><TMPL_VAR NAME="page"></b><TMPL_IF NAME="print"></a></TMPL_IF></td>
+        </TMPL_LOOP>
+</tr>
+</table>
+</TMPL_IF>
+
+<hr>
+Всего файлов: <b><TMPL_VAR NAME="num"></b>, Общий размер: <b><TMPL_VAR NAME="fullsize"></b>
+</div>
+<HR>
+<div align="center"><a href="/search.html">|на главную|</a></div></td>
+    <td class="r2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bl2">&nbsp;</td>
+    <td class="b2">&nbsp;</td>
+    <td class="br2">&nbsp;</td>
+  </tr>
+</table>
+<div align="center" class="copyright">Programming by anCHORiTe<br />
+  Design by RokeR</div>
+
+</body>
+</html>

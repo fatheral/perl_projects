@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r">
+<link rel="stylesheet" href="/base.css" type="text/css">
+<title>BrTel | FTP Browser | by anCHORiTe</title>
+</head><body>
+<div align="center"><h2 style="color: green;">Браузер FTP-серверов локальной сети БрянскТел</h2></div>   
+<hr>
+
+<div align="right"><a href="http://ftpsearch.bryansktel.ru">На главную</a></div>
+<div align="center">
+Содержимое <a href="<TMPL_VAR NAME="top_href">"><b><TMPL_VAR NAME="top_name"></b></a> :<br>
+</div>
+<div align="center">Всего в директории: <b><TMPL_VAR NAME="num"></b> файлов</div>
+<br>
+<TMPL_IF NAME="parent_dir">
+<a href="?dir=<TMPL_VAR NAME="parent_dir">&amp;serv=<TMPL_VAR NAME="parent_serv">"><b>На уровень выше</b></a>
+<TMPL_ELSE>
+<a href="?dir="><b>К списку FTP-серверов</b></a>
+</TMPL_IF>
+<br><br>
+<table class="tbl">
+<tr><th>id</th><th>Дир</th><th>Имя файла</th><th>Размер</th><th>Ед</th><th>Дата скана</th></tr>
+<TMPL_LOOP NAME="ftable">
+<tr onMouseOver="this.style.backgroundColor='#ECF0F2'" onMouseOut="this.style.backgroundColor='#e0e0e0'">
+<td><TMPL_VAR NAME="ind">.</td>
+<td><b><TMPL_VAR NAME="fd"></b></td>
+<td><a href="<TMPL_VAR NAME="href">"><TMPL_VAR NAME="name"></a></td>
+<td align="right"><TMPL_VAR NAME="size"></td>
+<td align="right"><TMPL_VAR NAME="size_ed"></td>
+<td align="center"><TMPL_VAR NAME="time"></td>
+</tr>
+</TMPL_LOOP>
+</table>
+<hr>
+<div align="center">
+<TMPL_IF NAME="pages">
+<table>
+<tr>	
+	<th>Страницa <b><TMPL_VAR NAME="page"></b> из <b><TMPL_VAR NAME="strnum"></b>:</th>
+	<TMPL_LOOP NAME="pages">
+	<td><TMPL_IF NAME="print"><a href="?dir=<TMPL_VAR NAME="dir">&amp;serv=<TMPL_VAR NAME="serv">&amp;page=<TMPL_VAR NAME="page">"></TMPL_IF><b><TMPL_VAR NAME="page"></b><TMPL_IF NAME="print"></a></TMPL_IF></td>
+	</TMPL_LOOP>
+</tr>
+</table>
+</TMPL_IF>
+Всего файлов: <b><TMPL_VAR NAME="num"></b>, Общий размер: <b><TMPL_VAR NAME="fullsize"></b>
+</div>
+
+</body></html>

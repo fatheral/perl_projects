@@ -1,0 +1,72 @@
+body, table, input, select, textarea { font-family: Tahoma; font-size: 8pt; }
+a { text-decoration: none; }
+
+table {
+    border: none;
+}
+
+tr, td {
+    border: none;
+    padding: 0px 0px 0px 0px;
+}
+.tbl { 
+    background: #ffffff;
+    border: none;
+    border-spacing: 0px; }
+.tbl tr { 
+    border: none;
+    background: #e0e0e0;
+}
+.tbl td { 
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    padding: 1px 2px 1px 2px; 
+}
+.tbl th { 
+    background: #c0c0d0;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    padding: 3px 4px 2px 4px; }
+.tbl .tr_neg { 
+    background: #c0c0c0;
+}
+.tbl .tr_die { 
+    background: #d0f0f0;
+}
+.tbl .tr_alive { 
+    background: #d0e0d0;
+}
+
+
+hr {
+    color: #000000; 
+    background-color: #000000; 
+    border-style: none; 
+    height: 1px; 
+    margin-top: 5px; 
+    margin-bottom: 0px;
+}
+
+input, select, textarea {
+    border: 1px solid #a0a0a0; 
+    font-size: 8pt;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+.inp {
+    background-color: #ffffff;
+    border: none; 
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 1px;
+}
+
+.err { color: #ff0000; }
+
+.instr { font-family: Times New Roman, Helvetica; font-size: 11pt; }
+.instr_hut { font-family: Times New Roman, Helvetica; font-size: 14pt; }
+.instr_cap { font-family: Times New Roman, Helvetica; font-size: 12pt; }

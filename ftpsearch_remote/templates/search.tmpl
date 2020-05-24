@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Search.bks-tv.ru &raquo; Search results</title>
+<link href="/main.css" rel="stylesheet" type="text/css" />
+<script src="/scripts/jquery-packed.js"></script>
+<script src="/scripts/autosuggest.js"></script>
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="tl2">&nbsp;</td>
+    <td class="t2">&nbsp;</td>
+    <td class="tr2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="l2">&nbsp;</td>
+    <td>
+    <table border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="left">&nbsp;</td>
+    <td class="rep"><table width="600" height="120" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="30" class="title">ПОИСК ПО FTP-СЕРВЕРАМ ЛОКАЛЬНОЙ СЕТИ БКС</td>
+      </tr>
+      <tr>
+        <td>
+        <form method="get" action="/cgi/search.pl">
+            <table border="0" align="center" cellpadding="0" cellspacing="0" width="600">
+              <tr>
+                <td align="center" height="20">
+                        <div align="left">
+                                <div class="suggest1" id="suggestions">
+                                </div>
+                        </div>
+                    <input name="q" type=text class="textbox" id="q" onkeyup="javascript:autosuggest()" value="<TMPL_VAR NAME="query">" maxlength=25 autocomplete="off" />
+                    <input type=submit class="button" value="Поиск&nbsp;&raquo;&nbsp;" />
+              </td>
+              </tr>
+                  <td><span class="extsearch"><a href="/cgi/extsearch.pl?q=<TMPL_VAR NAME="query">&amp;ot=<TMPL_VAR NAME="ot">&amp;do=<TMPL_VAR NAME="do">&amp;full=<TMPL_VAR NAME="full">&amp;sizesort=<TMPL_VAR NAME="sizesort">&amp;cond=<TMPL_VAR NAME="cond">&amp;target=<TMPL_VAR NAME="target">"><img src="/design/plus.gif" width="12" height="8" border="0"/>расширенный поиск</a></span></td>
+              </tr>
+            </table>
+          </form>
+       </td>
+      </tr>
+      <tr>
+        <td>
+        <a href="/cgi/imdblink.pl"> <span class="menu">Поиск фильмов в IMDB и Links</span></a>
+        <a href="/cgi/fdir.pl"> <span class="menu">Браузер FTP</span></a>
+        <a href="/cgi/fstats.pl"> <span class="menu">Статистика</span></a>
+        <a href="/help.html"> <span class="menu">О поисковике</span></a>
+        </td>
+      </tr>
+    </table></td>
+    <td class="right">&nbsp;</td>
+  </tr>
+</table>
+<hr>							
+
+<br>
+<div align="center">
+<TMPL_IF NAME="ftable">
+Результаты поиска: найдено <B><TMPL_VAR NAME="num"></b> файлов
+<table class='tbl'>
+<tr><th>id</th><th>Тип</th><th>Путь</th><th>Размер</th><th>Ед</th><th>Дата скана</th></tr>
+<TMPL_LOOP NAME="ftable">
+<tr onMouseOver="this.style.backgroundColor='#cccccc'" onMouseOut="this.style.backgroundColor='#ffffff'">
+<td><TMPL_VAR NAME="ind">.</td>
+<td <TMPL_VAR NAME="fd">>&nbsp;</td>
+<td align="left"><a href="<TMPL_VAR NAME="href">"><TMPL_VAR NAME="pathstr"></a></td>
+<td align="right"><TMPL_VAR NAME="size"></td>
+<td align="right"><TMPL_VAR NAME="size_ed"></td>
+<td align="center"><TMPL_VAR NAME="time"></td>
+</tr>
+</TMPL_LOOP>
+</table>
+<TMPL_IF NAME="pages">
+<table>
+<tr>	
+	<th>Страницa <b><TMPL_VAR NAME="page"></b> из <b><TMPL_VAR NAME="strnum"></b>:</th>
+	<TMPL_LOOP NAME="pages">
+		<td><TMPL_IF NAME="query"><a href="/cgi/search.pl?q=<TMPL_VAR NAME="query">&amp;page=<TMPL_VAR NAME="page">&amp;ot=<TMPL_VAR NAME="ot">&amp;do=<TMPL_VAR NAME="do">&amp;full=<TMPL_VAR NAME="full">&amp;sizesort=<TMPL_VAR NAME="sizesort">&amp;cond=<TMPL_VAR NAME="cond">&amp;target=<TMPL_VAR NAME="target">"></TMPL_IF><b><TMPL_VAR NAME="page"></b><TMPL_IF NAME="print"></a></TMPL_IF></td>
+	</TMPL_LOOP>
+</tr>
+</table>
+</TMPL_IF>
+</TMPL_IF>
+<TMPL_IF NAME="error">
+	<TMPL_VAR NAME="error">
+</TMPL_IF>
+<hr>
+
+Время обработки запроса: <b><TMPL_VAR NAME="sek"></b> сек<br>
+Этот отчет был сгенерирован <TMPL_VAR NAME="otchet"><br>
+Поиском воспользовались <B><TMPL_VAR NAME="numreq"></B> раз(а)
+</div>
+<HR>
+<div align="center"><a href="/search.html">|на главную|</a></div></td>
+    <td class="r2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bl2">&nbsp;</td>
+    <td class="b2">&nbsp;</td>
+    <td class="br2">&nbsp;</td>
+  </tr>
+</table>
+<div align="center" class="copyright">Programming by anCHORiTe<br />
+  Design by RokeR</div>
+
+<table width="99%" align="center" >
+<tr>
+<td align="left"><a style="color: black; text-decoration: underline;" onMouseOver="this.style.color='#660000'" onMouseOut="this.style.color='black'" href="/rok.html">Услуги по дизайну, верстке и 3D-моделированию</a></td>
+<td align="right"><a style="color: black; text-decoration: underline;" onMouseOver="this.style.color='#660000'" onMouseOut="this.style.color='black'" href="/rep.html">Математика и программирование: репетиторство, олимпиады</a></td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<link rel="stylesheet" href="base.css" type="text/css">
+<title>SMB-поисковик | anCHORiTe Edition</title>
+</head><body>
+<form method=get>
+<table>
+<tr>
+	<td align="center"><B>Строка поиска:</B></td>
+	<td><input type=text size=25 name="q" value="<TMPL_VAR NAME="query">"></td>
+	<td>
+		<select name="cond">
+		<option value="AND" <TMPL_IF NAME="and">selected="selected"</TMPL_IF>>Все слова (И)</option>
+		<option value="OR" <TMPL_IF NAME="or">selected="selected"</TMPL_IF>>Любое из слов (ИЛИ)</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<td>
+	<table>
+	<tr>
+		<td>От</td>
+		<td><input type=text size=6 name="ot" value="<TMPL_VAR NAME="ot">"></td>
+		<td>Кбайт</td>
+	</tr>
+	<tr>
+		<td>До</td>
+		<td><input type=text size=6 name="do" value="<TMPL_VAR NAME="do">"></td>
+		<td>Кбайт</td>
+	</tr>
+	</table>
+	</td>
+	<td align="right">
+        <table>
+	<tr>
+        	<td><input type=checkbox name="sizesort" <TMPL_IF NAME="sizesort">checked</TMPL_IF>></td>
+        	<td>Сортировать по размеру</td>
+        </tr>
+        <tr>
+                <td><input type=checkbox name="full" <TMPL_IF NAME="full">checked</TMPL_IF>></td>
+                <td>Искать в полном пути</td>
+        </tr>
+        </table>
+	</td>
+	<td align="right" valign="bottom"><input type=submit name="Enter" value="Искать!&nbsp;&raquo;&nbsp;"></td>
+</tr>	
+</table>
+<input type="hidden" name="page" value="1">
+</form>
+<hr />											

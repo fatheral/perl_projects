@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r">
+<link rel="stylesheet" href="base.css" type="text/css">
+<title>BrTel | FTP Search | by anCHORiTe</title>
+</head><body>
+<div align="center"><h2 style="color: green;">Поиск по FTP-серверам локальной сети БрянскТел</h2></div>
+<table width="100%">
+<tr>
+<td>
+<form method="get">
+<table>
+<tr>
+	<td align="center"><B>Строка поиска:</B></td>
+	<td><input type=text size=25 name="q" value="<TMPL_VAR NAME="query">"></td>
+	<td align="center">
+		<select name="target">
+		<option value="ALL" <TMPL_IF NAME="ALL">selected="selected"</TMPL_IF>>Все файлы</option>
+		<option value="DIR" <TMPL_IF NAME="DIR">selected="selected"</TMPL_IF>>Каталоги</option>
+		<option value="VIDEO" <TMPL_IF NAME="VIDEO">selected="selected"</TMPL_IF>>Видео</option>
+		<option value="AUDIO" <TMPL_IF NAME="AUDIO">selected="selected"</TMPL_IF>>Аудио</option>
+		<option value="DOC" <TMPL_IF NAME="DOC">selected="selected"</TMPL_IF>>Документы</option>
+		<option value="PICTURE" <TMPL_IF NAME="PICTURE">selected="selected"</TMPL_IF>>Картинки</option>
+		<option value="UNIX" <TMPL_IF NAME="UNIX">selected="selected"</TMPL_IF>>Файлы Unix</option>
+		<option value="CDIMAGE" <TMPL_IF NAME="CDIMAGE">selected="selected"</TMPL_IF>>Образы CD/DVD</option>
+		<option value="ARCHIVE" <TMPL_IF NAME="ARCHIVE">selected="selected"</TMPL_IF>>Архивы</option>
+		<option value="WINEXE" <TMPL_IF NAME="WINEXE">selected="selected"</TMPL_IF>>Исполняемые</option>
+		</select>
+	</td>
+	<td align="right"><input type=submit value="Искать!&nbsp;&raquo;&nbsp;"></td>
+</tr>
+<tr>
+	<td>
+	<table>
+	<tr>
+		<td>От</td>
+		<td><input type=text size=6 name="ot" value="<TMPL_VAR NAME="ot">"></td>
+		<td>Кбайт</td>
+	</tr>
+	<tr>
+		<td>До</td>
+		<td><input type=text size=6 name="do" value="<TMPL_VAR NAME="do">"></td>
+		<td>Кбайт</td>
+	</tr>
+	</table>
+	</td>
+	<td align="right">
+        <table>
+	<tr>
+		<td><input type=checkbox name="sizesort" <TMPL_IF NAME="sizesort">checked</TMPL_IF> style="border: none;"></td>
+		<td align="left">Сортировать по размеру</td>
+	</tr>
+        <tr>
+        	<td><input type=checkbox name="full" <TMPL_IF NAME="full">checked</TMPL_IF> style="border: none;"></td>
+        	<td align="left">Искать в полном пути</td>
+        </tr>
+        </table>
+	</td>
+	<td>
+	<table>
+	<tr>
+		<td><INPUT type="radio" name="cond" value="AND" <TMPL_IF NAME="and">checked</TMPL_IF> style="border: none;"></td>
+		<td>Все слова (И)</td>
+	</tr>
+	<tr>
+		<td><INPUT type="radio" name="cond" value="OR" <TMPL_IF NAME="or">checked</TMPL_IF> style="border: none;"></td>
+		<td>Любое из слов (ИЛИ)</td>
+	</tr>
+	</table>
+	</td>
+	<td></td>
+</tr>	
+</table>
+<input type="hidden" name="page" value="1">
+</form>
+</td>
+<td align="right" valign="top">
+	<a href="about.html">О поисковике</a><br>
+	<a href="ftpdir.pl">Браузер FTP</a><br>
+	<a href="ftpstats.pl">Статистика</a><br>
+</td>
+</tr>
+</table>
+<hr>											

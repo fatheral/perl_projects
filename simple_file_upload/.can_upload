@@ -1,0 +1,4 @@
+# directory to upload user files
+dir=/var/www/localhost/htdocs/share/files
+# maximum allowed size of the file to upload
+maxsize=10000000

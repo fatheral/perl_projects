@@ -1,0 +1,38 @@
+<br />
+<table width="100%">
+<tr>
+	<td align="center">Результаты поиска: найдено <B><TMPL_VAR NAME="num"></b> файлов</td>
+</tr>
+</table>
+<table class='tbl'>
+<tr><th>id</th><th>Дир</th><th>Путь</th><th>Размер</th><th>Ед</th><th>Дата посл.скана</th></tr>
+<TMPL_LOOP NAME="ftable">
+<tr onMouseOver="this.style.backgroundColor='#ECF0F2'" onMouseOut="this.style.backgroundColor='#e0e0e0'">
+<td><TMPL_VAR NAME="ind">.</td>
+<td><b><TMPL_VAR NAME="fd"></b></td>
+<td><a href="<TMPL_VAR NAME="href">"><TMPL_VAR NAME="pathstr"></a></td>
+<td align="right"><TMPL_VAR NAME="size"></td>
+<td align="right"><TMPL_VAR NAME="size_ed"></td>
+<td><TMPL_VAR NAME="time"></td>
+</tr>
+</TMPL_LOOP>
+</table>
+<hr>
+<table width="100%">
+<TMPL_IF NAME="pages">
+<tr> 
+	<td align="center">
+	<table>
+	<tr>	
+		<th>Страницa <b><TMPL_VAR NAME="page"></b> из <b><TMPL_VAR NAME="strnum"></b>:</th>
+		<TMPL_LOOP NAME="pages">
+		<td><TMPL_IF NAME="print"><a href="?q=<TMPL_VAR NAME="query">&page=<TMPL_VAR NAME="page">&ot=<TMPL_VAR NAME="ot">&do=<TMPL_VAR NAME="do">&full=<TMPL_VAR NAME="full">&sizesort=<TMPL_VAR NAME="sizesort">&cond=<TMPL_VAR NAME="cond">"></TMPL_IF><b><TMPL_VAR NAME="page"></b><TMPL_IF NAME="print"></a></TMPL_IF></td>
+		</TMPL_LOOP>
+	</tr>
+	</table>
+</tr>
+</TMPL_IF>
+<tr>
+        <td align="center">Время обработки запроса: <b><TMPL_VAR NAME="sek"></b> сек</td>
+</tr>
+</table>

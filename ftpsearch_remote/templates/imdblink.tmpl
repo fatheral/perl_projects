@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=koi8-r" />
+<title>Search.bks-tv.ru &raquo; Films on IMDB & Link</title>
+<link href="/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="70%">
+  <tr>
+    <td class="tl2">&nbsp;</td>
+    <td class="t2">&nbsp;</td>
+    <td class="tr2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="l2">&nbsp;</td>
+    <td><DIV align=center class="title">
+ПОИСК КРАТКОЙ ИНФОРМАЦИИ О ФИЛЬМЕ НА IMDB.COM</DIV>
+<DIV align=center class="title">
+ПОИСК ОПИСАНИЯ ФИЛЬМОВ НА LINKS.BKS-TV.RU</DIV>
+<HR>
+<FORM method=get>
+<TABLE align="center">
+  <TBODY>
+  <TR>
+    <TD><INPUT name="film" class="textbox3" value="<TMPL_VAR NAME="film">" size=25></TD>
+    <TD><INPUT type=submit value=&nbsp;&raquo;&nbsp;></TD></TR></TBODY></TABLE>
+<div class="margin">* Название 
+фильма должно быть на английском языке, если оно зарубежное, и на русском, если 
+оно отечественное.<BR>
+* Например, для поиска зарубежного фильма "<I>Чужой</I>" 
+нужно ввести строку "<B>Alien</B>", а для российского фильма "<I>Жара</I>" - 
+"<B>Жара</B>".<BR>
+* Помните: чем точнее название, тем больше шансов получить 
+верный ответ! ;-) </div>
+</FORM>
+<HR>
+<div align="center">
+<TMPL_IF NAME="title">
+<h3>IMDB.com</h3>
+<table class="tbl2">
+<tr>
+        <th>Название (IMDB)</th>
+	<td><TMPL_VAR NAME="title"></td>
+</tr>
+<tr>
+	<th>Год</th>
+	<td><TMPL_VAR NAME="year"></td>
+</tr>
+<tr>
+	<th>Жанр</th>
+	<td><TMPL_VAR NAME="genre"></td>
+</tr>
+<tr>
+	<th>Страна</th>
+	<td><TMPL_VAR NAME="country"></td>
+</tr>
+<tr>
+	<th>Режиссер</th>
+	<td><TMPL_VAR NAME="director"></td>
+</tr>	
+<tr>
+	<th>Рейтинг</th>
+	<td><b><TMPL_VAR NAME="rating"></b>/10 (<b><TMPL_VAR NAME="votes"></b> голосов)</td>
+</tr>
+<tr>
+	<th>Ссылка на imdb.com</th>
+	<td><a href="<TMPL_VAR NAME="link">"><TMPL_VAR NAME="link"></a></td>
+</tr>
+</table>
+<TMPL_ELSE>
+<TMPL_VAR NAME="err_imdb">
+</TMPL_IF>
+</div>
+
+<div align="center">
+<TMPL_IF NAME="links">
+<h3>LINKS.bks-tv.ru</h3>
+<table class='tbl2' width="60%">
+<tr>
+	<th>Название</th>
+	<th>Краткое описание</th>
+</tr>
+
+<TMPL_LOOP NAME="links">
+<tr>
+	<td><a href="http://links.bks-tv.ru/index.php?name=Video&pa=showvideo&pid=<TMPL_VAR NAME="pid">"><TMPL_VAR NAME="movie"></a></td>
+	<td><TMPL_VAR NAME="desc"></td>
+</tr>
+</TMPL_LOOP>
+
+</table>
+<TMPL_ELSE>
+<TMPL_VAR NAME="err_link">
+</TMPL_IF>
+</div>
+<hr />
+<div align="center"><a href="/search.html">|на главную|</a></div></td>
+    <td class="r2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="bl2">&nbsp;</td>
+    <td class="b2">&nbsp;</td>
+    <td class="br2">&nbsp;</td>
+  </tr>
+</table>
+<div align="center" class="copyright">Programming by anCHORiTe<br />
+  Design by RokeR</div>
+</body>
+</html>
